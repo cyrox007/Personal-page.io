@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     let header = document.querySelector('header');
 
-    console.log(header);
-
     document.addEventListener('scroll', ()=>{
         if (window.scrollY > 0) {
             header.style.background = '#FFFFFF'
