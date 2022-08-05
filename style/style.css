@@ -311,7 +311,7 @@ header #mobile-btn.active span::after {
   width: 225px;
 }
 .preview__link {
-  position: relative;
+  /* position: relative; */
   font-family: var(--template-font);
   font-size: var(--default-font-size);
   -webkit-text-decoration-line: underline;
