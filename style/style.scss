@@ -1,11 +1,14 @@
 :root {
-    --color-green: #49AD09;
+    --color-light: #FBFAFA;
+    --color-light-blue: #8F9DA5;
+    --color-green: #388707;
     --color-dark: #313131;
     --color-dark-r: #514040;
+    --color-dark-blue: #1F1E27;
 
     --template-font: sans; 
 
-    --default-font-size: 18px;
+    --default-font-size: 1.125rem;
 }
 
 *::-webkit {
@@ -115,6 +118,33 @@ header {
     display: flex;
     align-items: center;
     transition: background .3s ease;
+    z-index: 999;
+    &.active {
+        background: #fff;
+    }
+    nav {
+        width: 560px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 700px) {
+            position: absolute;
+            top: 0; right: 0;
+            height: 100vh;
+            width: 100%;
+            max-width: 500px;
+            flex-direction: column;
+            justify-content: space-around;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            background: #EDEDED;
+            
+        }
+        &.visible {
+            transform: translateX(0%);
+        }
+    }
     #mobile-btn {
         position: relative;
         height: 40px;
@@ -168,43 +198,24 @@ header {
 }
 
 .header {
-    position: relative;
     &__logo {
         font-family: var(--template-font);
         font-size: var(--default-font-size);
         color: var(--color-dark);
         font-weight: 600;
-        line-height: 21px;
+        line-height: 1.5;
     }
     &__nav {
-        width: 560px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        @media screen and (max-width: 700px) {
-            position: absolute;
-            top: 0; right: 0;
-            height: 100vh;
-            width: 100%;
-            max-width: 500px;
-            flex-direction: column;
-            justify-content: space-around;
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-            background: #EDEDED;
-            
-        }
-        &.visible {
-            transform: translateX(0%);
-        }
         &-link {
             text-decoration: none;
             font-family: var(--template-font);
             font-size: var(--default-font-size);
             color: var(--color-dark);
-            line-height: 21px;
+            line-height: 1.5;
             color: var(--color-dark);
+            &:hover {
+                text-decoration: double;
+            }
         }
         &-btn {
             text-decoration: none;
@@ -221,13 +232,17 @@ header {
             font-size: var(--default-font-size);
             text-align: center;
             color: var(--color-dark);
-            line-height: 21px;
+            line-height: 1.5;
             color: #fff;
+            transition: background .3s ease;
+            &:hover {
+                background: var(--color-dark-blue);
+            }
         }
     }
 }
 
-.preview {
+main {
     height: 900px;
     width: 100%;
     display: flex;
@@ -238,81 +253,79 @@ header {
     background-size: cover;
     
     background-position: center;
-
-    &__content {
-        max-width: 820px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__title {
-        margin-bottom: 36px;
-        font-family: var(--template-font);
-        font-size: 78px;
-        line-height: 80px;
-        font-weight: 800;
-        text-align: center;
-        color: var(--color-dark);
-        @media screen and (max-width: 550px) {
-            font-size: 50px;
-        }
-        span {
-            color: var(--color-green);
-        }
-    }
-
-    &__description {
-        max-width: 490px;
-        margin-bottom: 60px;
-        font-family: var(--template-font);
-        font-size: var(--default-font-size);
-        line-height: 148%;
-        font-weight: 400;
-        text-align: center;
-        color: var(--color-dark-r);
-    }
-
-    &__buttons {
-        width: 390px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        @media screen and (max-width: 550px) {
+    .preview {
+        &__content {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
             flex-direction: column;
-            #btn {
-                margin-bottom: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        &__title {
+            margin-bottom: 36px;
+            font-family: var(--template-font);
+            font-size: 4,875rem;
+            line-height: 1.5;
+            font-weight: 800;
+            text-align: center;
+            color: var(--color-dark);
+            @media screen and (max-width: 550px) {
+                font-size: 3,125rem;
+            }
+            span {
+                color: var(--color-green);
             }
         }
-    }
-
-    #btn {
-        width: 225px;
-    }
     
-    &__link {
-        /* position: relative; */
-        font-family: var(--template-font);
-        font-size: var(--default-font-size);
-        text-decoration-line: underline;
-        color: var(--color-dark-r);
-        &::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background: url(../img/Polygon.webp);
+        &__description {
+            max-width: 490px;
+            margin-bottom: 60px;
+            font-family: var(--template-font);
+            font-size: var(--default-font-size);
+            line-height: 1.5;
+            font-weight: 400;
+            text-align: center;
+            color: var(--color-dark-r);
+        }
+    
+        &__buttons {
+            width: 390px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width: 550px) {
+                flex-direction: column;
+                #btn {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    
+        #btn {
+            width: 225px;
+        }
+        
+        &__link {
+            font-family: var(--template-font);
+            font-size: var(--default-font-size);
+            text-decoration-line: underline;
+            color: var(--color-dark-r);
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background: url(../img/Polygon.webp);
+            }
         }
     }
 }
 
 .brand {
-    height: 180px;
-    width: 100%;
     display: flex;
     align-items: center;
     @media screen and (max-width: 1200px) {
@@ -322,11 +335,7 @@ header {
     }
 }
 
-.services,
-.works,
-.reviews,
-.price,
-.help {
+section {
     width: 100%;
     padding: 70px 0;
     @media screen and (max-width: 480px) {
@@ -337,18 +346,19 @@ header {
 p.pre-title {
     font-family: var(--template-font);
     font-size: var(--default-font-size);
+    line-height: 1.5;
     color: var(--color-dark-r);
     margin-bottom: 30px;
 }
 
 h2.title {
     font-family: var(--template-font);
-    font-size: 45px;
-    line-height: 53px;
+    font-size: 2.8125rem;
+    line-height: 1.5;
     text-align: center;
     color: var(--color-dark);
     @media screen and (max-width: 375px) {
-        font-size: 38px;
+        font-size: 2.375rem;
     }
 }
 
@@ -365,6 +375,7 @@ h2.title {
 }
 
 .btn-viewer {
+    cursor: pointer;
     text-decoration: none;
     width: 225px;
     height: 60px;
@@ -377,6 +388,10 @@ h2.title {
     box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259), 0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05), 0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
     border: none;
     border-radius: 5px;
+    transition: background .3s ease;
+    &:hover {
+        background: var(--color-dark-blue);
+    }
 }
 
 .services {
@@ -396,7 +411,7 @@ h2.title {
         border-radius: 5px;
         font-family: var(--template-font);
         font-size: var(--default-font-size);
-        line-height: 147.9%;
+        line-height: 1.5;
         transition: box-shadow .3s ease;
         & * {
             margin-bottom: 30px;
@@ -411,14 +426,14 @@ h2.title {
             }
         }
         &--title {
-            font-size: 22px;
+            font-size: 1.375rem;
             color: var(--color-dark);
         }
         &--text {
             color: var(--color-dark-r);
         }
         &--link {
-            font-size: 16px;
+            font-size: 1rem;
             text-decoration-line: underline;
             color: var(--color-dark);
         }
@@ -454,7 +469,7 @@ h2.title {
         }
     }
     &__title {
-        font-size: 28px;
+        font-size: 1.75rem;
         line-height: 33px;
         @media screen and (max-width: 480px) {
             font-size: var(--default-font-size);
@@ -462,10 +477,10 @@ h2.title {
     }
     &__link {
         text-decoration: none;
-        font-size: 18px;
+        font-size: var(--default-font-size);
         line-height: 21px;
         text-align: right;
-        color: #49AD09;
+        color: var(--color-green);
     }
 }
 .reviews {
@@ -514,20 +529,20 @@ h2.title {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        color: #32435C;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--color-dark-blue);
     }
     &__text {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 30px;
+        font-size: 1rem;
+        line-height: 1.5;
 
         letter-spacing: -0.01em;
 
-        color: #6A635B;
+        color: var(--color-dark-r);
     }
     &__stars {
         display: flex;
@@ -542,9 +557,9 @@ h2.title {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        color: #32435C;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        color: var(--color-dark-blue);
     }
     &__buttons {
         height: 65px;
@@ -562,7 +577,7 @@ h2.title {
         }
         #next {
             color: #fff;
-            background: #313131;
+            background: var(--color-dark);
             box-shadow: 0px 8px 15px rgba(72, 72, 138, 0.08);
         }
     }
@@ -594,13 +609,13 @@ h2.title {
         margin-bottom: 25px;
     }
     &__title {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: 1.875rem;
+        line-height: 1.5;
         text-align: center;
     }
     &__cost {
-        font-size: 60px;
-        line-height: 70px;
+        font-size: 3.75rem;
+        line-height: 1.5;
 
         text-align: center;
         text-transform: capitalize;
@@ -617,11 +632,12 @@ h2.title {
         }
     }
     &__btn {
+        cursor: pointer;
         height: 60px;
         width: 225px;
 
         font-size: var(--default-font-size);
-        line-height: 21px;
+        line-height: 1.5;
 
         color: var(--color-dark-r);
 
@@ -640,7 +656,7 @@ footer {
     padding: 30px;
     color: var(--color-dark);
     h2.title {
-        font-size: 35px;
+        font-size: 2.1875rem;
         text-align-last: left;
         margin-bottom: 35px;
     }
@@ -660,11 +676,15 @@ footer {
         display: flex;
         flex-direction: column;
         font-size: var(--default-font-size);
+        p {
+            line-height: 1.5;
+        }
     }
     &__link {
         margin: 15px 0;
         text-decoration: none;
         color: var(--color-dark);
+        
     }
     &__copy {
         margin-top: 40px;

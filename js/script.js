@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     document.addEventListener('scroll', ()=>{
         if (window.scrollY > 0) {
-            header.style.background = '#FFFFFF'
+            header.classList.add('active');
         } else {
-            header.style.background = 'none'
+            header.classList.remove('active');
         }
     });
 
