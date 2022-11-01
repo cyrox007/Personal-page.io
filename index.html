@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cайт портфолио">
     <title>Portfolio</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -27,27 +28,27 @@
                 <h2>Возьмусь за вас и ваш проект</h2>
             </div>
             <div class="main-right">
-                <img src="/images/black.webp" alt="Саурон">
+                <img src="images/black.webp" width="350" height="350" alt="Саурон">
             </div>
         </div>
     </main>
-    <section class="sect2">
+    <section id="sect2">
         <div class="container">
             <h2>Услуги</h2>
             <div class="row">
                 <article>
                     <h3>Одностраничник</h3>
-                    <img src="/images/page.webp" alt="To order webpage">
+                    <img src="images/page.webp" width="80" height="80" alt="To order webpage">
                     <a href="#contact">Заказать</a>
                 </article>
                 <article>
                     <h3>Блог</h3>
-                    <img src="/images/blog.webp" alt="To order blog">
+                    <img src="images/blog.webp" width="80" height="80" alt="To order blog">
                     <a href="#contact">Заказать</a>
                 </article>
                 <article>
                     <h3>Интернет-магазин</h3>
-                    <img src="/images/store.webp" alt="To order store">
+                    <img src="images/store.webp" width="80" height="80" alt="To order store">
                     <a href="#contact">Заказать</a>
                 </article>
             </div>
@@ -66,7 +67,7 @@
     <section id="sect4">
         <div class="container">
             <h2>Небольшая история о том как проходит творческий процесс</h2>
-            <video src="/video/1.webm" type="video/webm" controls></video>
+            <video src="video/2.webm" type="video/webm" controls></video>
         </div>
     </section>
     
@@ -75,7 +76,8 @@
             <p>Сделал сам -- 2022 г.</p>
         </div>
     </footer>
-    <script src="/scripts/sw.js"></script>
-    <script src="/scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/sw.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
