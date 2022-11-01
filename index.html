@@ -7,6 +7,7 @@
     <meta name="description" content="Cайт портфолио">
     <title>Portfolio</title>
     <link rel="manifest" href="manifest.json">
+    <script src="sw.js"></script>
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -64,20 +65,35 @@
             </form>
         </div>
     </section>
-    <section id="sect4">
+    <section id="primer">
+        <div class="container">
+            <h2>Примеры</h2>
+            <div class="row">
+                <article>
+                    <h3>Игра на JS</h3>
+                    <img src="images/page.webp" width="80" height="80" alt="To order webpage">
+                    <a href="#contact">Посмотреть</a>
+                </article>
+                <article>
+                    <h3>Псевдоблог</h3>
+                    <img src="images/blog.webp" width="80" height="80" alt="To order blog">
+                    <a href="#contact">Посмотреть</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="sect4" class="no-bg">
         <div class="container">
             <h2>Небольшая история о том как проходит творческий процесс</h2>
             <video src="video/2.webm" type="video/webm" controls></video>
         </div>
     </section>
-    
     <footer>
         <div class="container">
             <p>Сделал сам -- 2022 г.</p>
         </div>
     </footer>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/sw.js"></script>
+    
     <script src="scripts/main.js"></script>
 </body>
 </html>

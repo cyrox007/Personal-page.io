@@ -351,7 +351,7 @@ section .row {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
   section .row {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -359,6 +359,7 @@ section .row {
   }
 }
 section article {
+  margin-right: 10px;
   max-width: 270px;
   min-height: 270px;
   width: 100%;
@@ -382,7 +383,7 @@ section article {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
   section article {
     margin-bottom: 20px;
   }
