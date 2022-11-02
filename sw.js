@@ -2,7 +2,6 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('v1').then((cache) => {
       return cache.addAll([
-        "/",
         "/style/style.css",
         "/scripts/main.js",
         "/images/main-bg.webp",
@@ -13,5 +12,10 @@ self.addEventListener('install', (event) => {
         "/video/2.webm",
       ]);
     })
+  );
+});
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    // магия происходит здесь
   );
 });
