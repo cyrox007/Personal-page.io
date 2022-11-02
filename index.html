@@ -92,19 +92,6 @@
             <p>Сделал сам -- 2022 г.</p>
         </div>
     </footer>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-              navigator.serviceWorker.register('./sw.js')
-                .then((reg)=>{
-                  console.log('Registration succeeded. Scope is ' + reg.scope);
-                })
-                .catch((err)=>{
-                  console.log('Registration failed with ' + err);
-                })
-            });
-          }
-    </script>
     <script src="sw.js"></script>
     <script src="scripts/main.js"></script>
 </body>
