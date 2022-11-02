@@ -1,11 +1,13 @@
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
     .then((reg)=>{
       console.log('Registration succeeded. Scope is ' + reg.scope);
     })
     .catch((err)=>{
       console.log('Registration failed with ' + err);
     })
+  });
 }
 
 const CACHE_NAME = "my-web-app";
