@@ -25,10 +25,10 @@
         }
     ],
     "id": "/",
-    "start_url": "/",
+    "start_url": "https://cyrox007.github.io/personalpage.github.io/",
     "background_color": "#3367D6",
     "display": "standalone",
-    "scope": "/",
+    "scope": "https://cyrox007.github.io/personalpage.github.io/",
     "theme_color": "#3367D6",
     "description": "Описание страницы портфолио",
     "screenshots": [
