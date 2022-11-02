@@ -24,14 +24,3 @@ portfolio.main = {
     });
     ;
 }());
-/* 
-let mobileBtn = document.getElementById('mobile-btn');
-let navigate = document.querySelector('nav');
-
-document.addEventListener('DOMContentLoaded', () => {
-    mobileBtn.addEventListener('click', () => {
-        navigate.classList.toggle('visible');
-        mobileBtn.classList.toggle('active');
-    });
-});
- */
